@@ -14,7 +14,7 @@ public class PascalsTriangleTest {
 
     @Test
     public void generate() {
-        for (List<Integer> integers : PascalsTriangle.generate(3)) {
+        for (List<Integer> integers : PascalsTriangle.generate(5)) {
             System.out.println(integers);
         }
     }
