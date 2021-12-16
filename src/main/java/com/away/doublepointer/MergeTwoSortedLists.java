@@ -1,6 +1,6 @@
-package com.away.linkedlist;
+package com.away.doublepointer;
 
-import java.util.List;
+import com.away.predefineddatastructure.ListNode;
 
 /**
  * @author away
