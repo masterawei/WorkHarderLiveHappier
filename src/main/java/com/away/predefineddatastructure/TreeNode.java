@@ -5,6 +5,7 @@ package com.away.predefineddatastructure;
  * @date 2021-12-17 14:46
  */
 public class TreeNode {
+
     public int val;
     public TreeNode left;
     public TreeNode right;
