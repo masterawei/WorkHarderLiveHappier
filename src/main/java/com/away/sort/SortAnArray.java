@@ -1,5 +1,7 @@
 package com.away.sort;
 
+import com.sun.org.apache.bcel.internal.generic.SWAP;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -9,33 +11,51 @@ import java.io.InputStreamReader;
  */
 public class SortAnArray {
     public int[] sortArray(int[] nums) {
-        qSort(nums,0,nums.length-1);
+        sort(nums,0,nums.length-1);
         return nums;
     }
 
-    void qSort(int[] arr,int s,int e){
-        int l = s, r = e;
-        if(l < r){
-            int temp = arr[l];
-            while(l < r){
-                while(l < r && arr[r] >= temp) {
-                    r--;
-                }
-                if(l < r) {
-                    arr[l] = arr[r];
-                }
-                while(l < r && arr[l] < temp) {
-                    l++;
-                }
-                if(l < r) {
-                    arr[r] = arr[l];
-                }
-            }
-            arr[l] = temp;
-            qSort(arr,s,l);
-            qSort(arr,l + 1, e);
+    void sort(int[] nums, int lo, int hi) {
+        if (lo >= hi) {
+            return;
         }
+        //通过交换元素构建分界点索引p
+        int p = partition(nums,lo,hi);
+        sort(nums, lo, p - 1);
+        sort(nums, p + 1, hi);
     }
 
+    private int partition(int[] nums, int lo, int hi) {
+        if (lo == hi) {
+            return lo;
+        }
+        int pivot = nums[lo];
+        int i = lo;
+        int j = hi+1;
+        while (true) {
+            while (nums[++i] < pivot) {
+                if (i == hi) {
+                    break;
+                }
+            }
+            while (nums[--j] > pivot) {
+                if (j == lo) {
+                    break;
+                }
+            }
+            if (i >= j) {
+                break;
+            }
 
+            swap(nums,i,j);
+        }
+        swap(nums, j, lo);
+        return j;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
 }
