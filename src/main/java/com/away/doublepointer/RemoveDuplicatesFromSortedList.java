@@ -1,4 +1,4 @@
-package com.away.doublepointer.fastandslowpointer;
+package com.away.doublepointer;
 
 import com.away.predefineddatastructure.ListNode;
 

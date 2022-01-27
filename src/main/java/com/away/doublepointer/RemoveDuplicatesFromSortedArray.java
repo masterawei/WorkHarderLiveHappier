@@ -1,4 +1,4 @@
-package com.away.doublepointer.fastandslowpointer;
+package com.away.doublepointer;
 
 /**
  * @author away
