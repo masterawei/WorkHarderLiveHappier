@@ -44,4 +44,36 @@ public class PalindromeLinkedList {
         }
         return pre;
     }
+
+    /**
+     * 相差不大
+     * @param head
+     * @return
+     */
+    public boolean isPalindrome2(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast!=null&&fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode pre= null;
+        ListNode cur = slow;
+        while(cur!=null){
+            ListNode nxt = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = nxt;
+        }
+        while(pre!=null&&head!=null){
+            if(pre.val!=head.val){
+                return false;
+            }
+            pre = pre.next;
+            head = head.next;
+        }
+        return true;
+    }
+
+
 }
