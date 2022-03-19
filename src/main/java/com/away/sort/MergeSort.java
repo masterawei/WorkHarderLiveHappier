@@ -2,6 +2,9 @@ package com.away.sort;
 
 import com.away.predefineddatastructure.ListNode;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,7 +15,11 @@ import java.util.Scanner;
  * 有一点需要注意：而且很重要，tmp数组最好在一开始的时候就new出来，否则在递归过程中将重复new数组
  */
 public class MergeSort {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        int read = bf.read();
+
+
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] nums = new int[n];
