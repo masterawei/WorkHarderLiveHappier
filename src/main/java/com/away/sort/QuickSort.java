@@ -8,6 +8,8 @@ import java.util.Arrays;
 /**
  * @author away
  * @date 2022-03-20 17:13
+ * 金山面试的时候
+ *
  */
 public class QuickSort {
     public static void main(String[] args) throws IOException {
@@ -33,6 +35,13 @@ public class QuickSort {
 
     }
 
+    /**
+     * 为什么需要和j置换呢?
+     *在一次遍历过程中,将比num小的置换到左边,大的置换到右边.当结束循环之时,j指向的一定是比num小,而i指向的一定比num大,
+     * 因此只能替换j和low,而不能替换i和low!
+     *
+     * 而且每次递归一次,只保证了左右的相对大小顺序,而不保证左右的顺序.
+     */
     private static int findPivot(int[] nums, int low, int high) {
 
         int num = nums[low];
