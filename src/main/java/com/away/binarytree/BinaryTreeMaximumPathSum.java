@@ -20,7 +20,7 @@ public class BinaryTreeMaximumPathSum {
         if (root == null) {
             return 0;
         }
-        int leftMax = Math.max(0,maxPath(root.left);
+        int leftMax = Math.max(0,maxPath(root.left));
         int rightMax = Math.max(0, maxPath(root.right));
         max = Math.max(root.val+leftMax+rightMax,max);
         return Math.max(leftMax,rightMax)+root.val;
