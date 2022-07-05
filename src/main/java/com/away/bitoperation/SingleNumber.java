@@ -1,4 +1,4 @@
-package com.away.bitperation;
+package com.away.bitoperation;
 
 /**
  * @author away
